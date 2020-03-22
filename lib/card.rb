@@ -1,5 +1,7 @@
 # A single card
 class Card
+  include Comparable
+  
   def initialize(value, suit)
     @value = value
     @suit = suit
@@ -22,6 +24,10 @@ class Card
 
   def to_s
     "the #{human_value} of #{@suit}"
+  end
+
+  def <=>(other)
+    value <=> other.value
   end
 
   def self.build(suit)
