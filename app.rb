@@ -1,7 +1,9 @@
 require './lib/deck'
 
-card_1 = Deck.new.draw
-card_2 = Deck.new.draw
+deck = Deck.new
+
+card_1 = deck.draw
+card_2 = deck.draw
 
 puts "First card: #{card_1}"
 puts "Second card: #{card_2}"
