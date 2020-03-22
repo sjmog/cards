@@ -5,8 +5,8 @@ class Card
     @suit = suit
   end
 
-  def value
-    case @value
+  def human_value
+    case value
     when 1
       return :ace
     when 11
@@ -16,15 +16,19 @@ class Card
     when 13
       return :king
     else
-      return @value
+      return value
     end
   end
 
   def to_s
-    "the #{@value} of #{@suit}"
+    "the #{human_value} of #{@suit}"
   end
 
   def self.build(suit)
     (1..13).map { |value| new(value, suit) }
   end
+
+  protected
+
+  attr_reader :value
 end
