@@ -1,7 +1,5 @@
 # A single card
 class Card
-  attr_reader :suit
-
   def initialize(value, suit)
     @value = value
     @suit = suit
@@ -20,6 +18,10 @@ class Card
     else
       return @value
     end
+  end
+
+  def to_s
+    "the #{@value} of #{@suit}"
   end
 
   def self.build(suit)
