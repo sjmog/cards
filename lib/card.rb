@@ -1,7 +1,7 @@
 # A single card
 class Card
   include Comparable
-  
+
   def initialize(value, suit)
     @value = value
     @suit = suit
@@ -28,10 +28,6 @@ class Card
 
   def <=>(other)
     value <=> other.value
-  end
-
-  def self.build(suit)
-    (1..13).map { |value| new(value, suit) }
   end
 
   protected
